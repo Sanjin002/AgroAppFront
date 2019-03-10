@@ -1,19 +1,36 @@
 <template>
   <div id="app">
     <header>
-      <span>Vue.js PWA</span>
+      <Navbar></Navbar>
     </header>
     <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
       <router-view></router-view>
     </main>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+import Navbar from '@/components/Navbar'
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+     cities: [],
+    }
+  },
+  components: {
+  Navbar
+  },
+  mounted () {
+    axios
+      .get('http://meteo.pointjupiter.co')
+      .then(response => {
+        (this.cities = response.data.cities);
+      });
+  },
 }
+
 </script>
 
 <style>
@@ -33,7 +50,7 @@ main {
   margin-top: 40px;
 }
 
-header {
+/*header {
   margin: 0;
   height: 56px;
   padding: 0 16px 0 24px;
@@ -50,5 +67,5 @@ header span {
   font-weight: 400;
   box-sizing: border-box;
   padding-top: 16px;
-}
+}*/
 </style>
