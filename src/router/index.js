@@ -6,6 +6,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Hello from '@/components/Hello'
 import Crops from '@/components/Crops'
 import Forecast from '@/components/Forecast'
+import Graf from '@/components/Graf'
 
 Vue.use(BootstrapVue)
 Vue.use(Router)
@@ -26,6 +27,11 @@ export default new Router({
       path: '/forecast',
       name: 'Forecast',
       component: Forecast,
+    },
+    {
+      path: '/graf',
+      name: 'Graf',
+      component: Graf,
     },
   ]
 })

@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+
+export const bus = new Vue()
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -12,4 +15,4 @@ new Vue({
   router,
   template: '<App/>',
   components: { App }
-})
+}).$mount('#app')

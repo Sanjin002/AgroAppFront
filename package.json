@@ -10,11 +10,16 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@alfsnd/vue-bootstrap-select": "^0.3.0",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.14",
+    "chart.js": "^2.7.3",
     "vue": "^2.6.8",
-    "vue-router": "^3.0.1"
+    "vue-chartjs": "^3.4.0",
+    "vue-router": "^3.0.1",
+    "vue-search-select": "^2.8.3",
+    "vue-simple-search-dropdown": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
