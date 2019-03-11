@@ -1,14 +1,20 @@
 <template>
   <div>
-   
-        <h2>{{selected}}</h2>
     
-    <graf class="graf"></graf>
+    
+    
+    <h5>cityData{{cityData}}</h5>
+    <h5>cityTemp{{cityTemp}}</h5>
+        <!-- <img :src="getImgUrl(hour.weather)" v-bind:alt="hour"> -->
+      
+      
+     <graf class="graf"></graf>
 
   </div>
 </template>
 
 <script> 
+import axios from 'axios'
 import { bus } from '../main'
 import Graf from './Graf.vue';
 export default {
@@ -22,17 +28,25 @@ export default {
      city: [],
      selected: '',
      curr_selected:'',
+     cityData: [],
+     cityTemp: [],
     }
+  },
+  methods: {
+    
+    },
+     getImgUrl(png) {
+    return require('../assets/'+png)
   },
     created(){
     bus.$on('podaciZaGraf', (data)=> {this.selected = data;
     })
   },
-  mounted () {
-    var vrijemeGrada = 'http://meteo.pointjupiter.co/'+this.selected;
+ mounted () {
+    var vrijemeGrada = 'http://localhost:8000/weather/'+this.selected;
     this.curr_selected = this.selected;
     axios
-      .get('http://meteo.pointjupiter.co')
+      .get('http://localhost:8000/weather/')
       .then(response => {
         (this.cities = response.data.cities);
       });
@@ -44,11 +58,11 @@ export default {
   updated() {
     if(this.selected !== this.curr_selected){
       this.curr_selected = this.selected;
-    var vrijemeGradaUD = 'http://meteo.pointjupiter.co/'+this.selected;
+    var vrijemeGradaUD = 'http://localhost:8000/weather/'+this.selected;
     axios
     .get(vrijemeGradaUD)
     .then(response => {(this.city = response.data);
-                      (this.cityData = response.data.data[0].forecast);
+                      (this.cityData = response.data);
       });
     }
   }

@@ -106,7 +106,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       minify: true,
       stripPrefix: 'dist/',
       runtimeCaching: [{
-        urlPattern: new RegExp('^http://meteo.pointjupiter.co/'),
+        urlPattern: new RegExp('^http://localhost:8000/'),
         handler: 'networkFirst',
       }],
     })
