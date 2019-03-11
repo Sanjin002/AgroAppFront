@@ -46,6 +46,7 @@ export default {
   Navbar
   },
   mounted () {
+    var vrijemeGrada = 'http://localhost:8000/weather/'+this.selected;
     this.curr_selected = this.selected;
     axios
       .get('http://localhost:8000/weather/')
