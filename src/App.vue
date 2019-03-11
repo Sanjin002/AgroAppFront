@@ -5,8 +5,8 @@
     </header>
     <main>
       <router-view :selected="selected"></router-view>
-      <h5>{{city.location}}</h5>
-      <h5>{{selected}}</h5>
+      <h5>city.location:{{city.location}}</h5>
+      <h5>selected App {{selected}}</h5>
       <div v-for="hour in cityData">
         <h5>{{hour.temperature}}</h5>
       </div>

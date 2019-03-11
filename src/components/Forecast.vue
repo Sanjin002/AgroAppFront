@@ -3,7 +3,7 @@
    
         <h2>{{selected}}</h2>
     
-   <!--  <graf class="graf"></graf> -->
+    <graf class="graf"></graf>
 
   </div>
 </template>
@@ -20,17 +20,13 @@ export default {
     return {
      cities: [],
      city: [],
-     selected: 'kurac',
+     selected: '',
      curr_selected:'',
-     cityData: [],
-     cityTemp: [],
     }
   },
-  methods: {
     created(){
     bus.$on('podaciZaGraf', (data)=> {this.selected = data;
     })
-  },
   },
   mounted () {
     var vrijemeGrada = 'http://meteo.pointjupiter.co/'+this.selected;
