@@ -61,10 +61,10 @@ export default {
   updated() {
     if(this.selected !== this.curr_selected){
       this.curr_selected = this.selected;
-    var vrijemeGrada = 'http://localhost:8000/weather/'+this.selected;
+    var vrijemeGradaUD = 'http://localhost:8000/weather/'+this.selected;
     axios
-    .get(vrijemeGrada)
-    .then(response => {(this.city = response.curr_day);
+    .get(vrijemeGradaUD)
+    .then(response => {(this.city = response.data);
                       (this.cityData = response.data.data[0].forecast);
       });
     }
