@@ -4,11 +4,7 @@
       <Navbar v-bind:cities="cities" v-on:noviSelected="noviGrad($event)"></Navbar>
     </header>
     <main>
-
-    
       <router-view></router-view>
-    
-    
     </main>
     </div>
   </div>

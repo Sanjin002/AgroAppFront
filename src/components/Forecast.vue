@@ -1,18 +1,20 @@
 <template>
   <div>
-    
-    
-    
-    <!-- <h5>city{{city}}</h5> -->
-    <h5>selected{{selected}}</h5>
-  <!--   <h5>curr_selected{{curr_selected}}</h5>
-    <h5>cityData{{cityData}}</h5>
-    <h5>cityTemp{{cityTemp}}</h5> -->
+    <div class="row">
+      <h5>{{selected}} </h5>
+       <div class="col-10 weather">       
+        <div class="row">
+          <div class="tri col">
+            <h4>{{city.curr_day.forecast[0].temperature}}</h4>
+              <p> bla °C</p>
+                <img class="slika" src="../assets/1.png">
+               <p>bla</p>
+          </div>
+        </div>
+    </div>
+  </div>
         <!-- <img :src="getImgUrl(hour.weather)" v-bind:alt="hour"> -->
-      
-      
      <graf class="graf"></graf>
-
   </div>
 </template>
 
@@ -65,7 +67,7 @@ export default {
     axios
     .get(vrijemeGradaUD)
     .then(response => {(this.city = response.data);
-                      (this.cityData = response.data.data[0].forecast);
+                      (this.cityData = response.data.data);
       });
     }
   }
@@ -90,4 +92,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.container .table {
+      
+    width: 80%;
+    height: 200px;
+    color: white;
+    padding: 25px;
+  }
 </style>
