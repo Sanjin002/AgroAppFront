@@ -5,11 +5,7 @@
     </header>
     <main>
 
-    <h5>city{{city}}</h5>
-    <h5>selected{{selected}}</h5>
-    <h5>curr_selected{{curr_selected}}</h5>
-    <h5>cityData{{cityData}}</h5>
-    <h5>cityTemp{{cityTemp}}</h5>
+    
       <router-view></router-view>
     
     

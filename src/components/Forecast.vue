@@ -3,8 +3,11 @@
     
     
     
+    <!-- <h5>city{{city}}</h5> -->
+    <h5>selected{{selected}}</h5>
+  <!--   <h5>curr_selected{{curr_selected}}</h5>
     <h5>cityData{{cityData}}</h5>
-    <h5>cityTemp{{cityTemp}}</h5>
+    <h5>cityTemp{{cityTemp}}</h5> -->
         <!-- <img :src="getImgUrl(hour.weather)" v-bind:alt="hour"> -->
       
       
@@ -50,7 +53,7 @@ export default {
       .then(response => {
         (this.cities = response.data.cities);
       });
-    axios
+      axios
       .get(vrijemeGrada)
       .then(response => {(this.city = response.data);
       });
@@ -62,7 +65,7 @@ export default {
     axios
     .get(vrijemeGradaUD)
     .then(response => {(this.city = response.data);
-                      (this.cityData = response.data);
+                      (this.cityData = response.data.data[0].forecast);
       });
     }
   }

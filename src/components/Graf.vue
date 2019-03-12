@@ -7,6 +7,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
 import { bus } from '../main'
 import Chart from "./../Chart.js"
 export default {
@@ -18,43 +19,52 @@ export default {
     return {
       datacollection: null,
       selected: '',
+      curr_selected: '',
+      temp:'',
+      perc:'',
     };
   },
   created(){
     bus.$on('podaciZaGraf', (data)=> {this.selected = data;
     })
   },
-  mounted() {
-    this.fillData();
+  mounted () {
+    var vrijemeGrada = 'http://127.0.0.1:8000/weather/'+this.selected;
+    this.curr_selected = this.selected;
+      axios
+      .get(vrijemeGrada)
+      .then(response => {(this.temp = response.data.day_1.temp_arr);
+                        (this.perc = response.data.day_1.perc_arr);
+        this.fillData();
+      });              
+  },
+  updated() {
+    if(this.selected !== this.curr_selected){
+      this.curr_selected = this.selected;
+    var vrijemeGradaUD = 'http://localhost:8000/weather/'+this.selected;
+    axios
+      .get(vrijemeGradaUD)
+      .then(response => {(this.temp = response.data.day_1.temp_arr);
+                        (this.perc = response.data.day_1.perc_arr);
+        this.fillData();
+      });              
+    }
   },
   methods: {
     fillData() {
       this.datacollection = {
-        labels: [
-          "00:00",
-          "01:00",
-          "02:00",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December"
-        ],
+        labels: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
         // labels: [this.getRandomInt(), this.getRandomInt()],
         datasets: [
           {
             label: "Temperatura",
             borderColor: "#f87979",
-            data: [11, 12, 12, 13, 14, 14, 13, 12, 11, 10, 0, -5]
+            data: this.getTemp()
           },
           {
-            label: "Vlažnost zraka",
+            label: "Oborine",
             borderColor: "#A5CC82",
-            data: [92, 50, 51, 60, 58, 40, 80, 30, 64, 54, 90, 20]
+            data: this.getPerc()
           }
           // {
           //   label: "Data One",
@@ -76,8 +86,14 @@ export default {
     },
     getRandomInt() {
       return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
+    },
+    getTemp(){
+      return   this.temp
+    },
+    getPerc(){
+      return   this.perc
     }
-  }
+  },
 };
 </script>
 
