@@ -8,6 +8,7 @@
           <b-nav-item to="/">Hello</b-nav-item>
           <b-nav-item to="/Forecast">Forecast</b-nav-item>
           <b-nav-item to="/Crops">Crops</b-nav-item>
+          <b-nav-item to="/Calendar">Calendar</b-nav-item>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
