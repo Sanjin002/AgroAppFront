@@ -1,6 +1,6 @@
 <template>
   <div >
-    <b-navbar class="crta" toggleable="lg" type="dark" >
+    <b-navbar class="crta" toggleable="lg" type="dark"  variant="success" >
       <!--<b-navbar-brand href="#">AGRO APP</b-navbar-brand>-->
       <b-navbar-toggle target="nav_collapse" />
       <b-collapse is-nav id="nav_collapse">

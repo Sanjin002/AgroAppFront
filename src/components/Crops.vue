@@ -7,12 +7,14 @@
         <h2>{{crops.id}}</h2>
         <h3>{{crops.name}}</h3>
         <p>{{crops.description}}</p>
-        <a href="#">Read More</a>
+        <button class="btn btn-dark" type="submit" v-on:click="submit(crops.id)" >Read more</button>
       </div>
     </div>
     </div>
 
 	</div>
+  <modal class="modal"></modal>
+
 </div>	
 </template>
 
@@ -31,6 +33,12 @@ export default {
       .then(response => {
         (this.crops = response.data);
       });
+  },
+  methods: {
+    submit: function(cropId){
+      this.$emit('selectedCrop',cropId);
+      // bus.$emit('podaciZaGraf', this.selected);
+    }
   },
 }
 </script>

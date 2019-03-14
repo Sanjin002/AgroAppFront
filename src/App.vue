@@ -65,7 +65,7 @@ export default {
 
 </script>
 
-<style >
+<style>
 body {
   margin: 0;
  
@@ -79,7 +79,7 @@ body {
   color: white;
 }
 body {
- /*background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url("./assets/background.png");*/
+ background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url("./assets/green.png");
  background-color: black;
  height: 100vh;
  background-size: cover;
