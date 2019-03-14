@@ -93,7 +93,7 @@ export default {
   transform: skew(2deg, 2deg);
   background: #000;
 }
-.container .boxn:th-child(1):before{
+.container .box:nth-child(1):before{
   background: linear-gradient(315deg,#ff0057, #e64a19);
 
 }
