@@ -9,6 +9,7 @@
           <b-nav-item  class="link" to="/">HELLO</b-nav-item>
           <b-nav-item class="link" to="/Forecast">FORECAST</b-nav-item>
           <b-nav-item  class="link" to="/Crops">CROPS</b-nav-item>
+          <b-nav-item  class="link" to="/SowingCalendar">SOWING CALENDAR</b-nav-item>
 
         </b-navbar-nav>
         <!-- Right aligned nav items -->
@@ -27,7 +28,7 @@
 </template>
 <script>
 import { bus } from '../main'
-export default { 
+export default {
   name: 'navbar',
   props: ["cities"],
   data () {
@@ -36,7 +37,7 @@ export default {
     }
   },
   components: {
-  
+
   },
   methods: {
     submit: function(){
@@ -60,17 +61,17 @@ export default {
   font-size: 25px;
   color: white;
   font-family: sans-serif;
-   
+
 }
 .lista .active .link {
   border: 1px solid white;
 }
 .lista .link:hover {
-  
+
   border: 1px solid white;
   border-radius: 0px
   /*font-weight: bold;*/
-   
+
 }
 .lista .link {
   padding: 3px 20px;
@@ -78,7 +79,7 @@ export default {
 .crta {
   border-bottom:1px solid white;
   padding-bottom:5px;
-  
+
 }
 .span {
   color: white;
