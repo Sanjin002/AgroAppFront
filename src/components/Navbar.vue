@@ -4,10 +4,12 @@
       <!--<b-navbar-brand href="#">AGRO APP</b-navbar-brand>-->
       <b-navbar-toggle target="nav_collapse" />
       <b-collapse is-nav id="nav_collapse">
+
         <b-navbar-nav class="lista">
           <b-nav-item  class="link" to="/">HELLO</b-nav-item>
           <b-nav-item class="link" to="/Forecast">FORECAST</b-nav-item>
           <b-nav-item  class="link" to="/Crops">CROPS</b-nav-item>
+
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
