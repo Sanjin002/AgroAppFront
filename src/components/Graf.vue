@@ -1,7 +1,7 @@
 <template>
   <div>
   <div class="container">
-    <p> {{ selected }}</p>
+    <p>Ja sam grad iz grafa: {{ selected }}</p>
     <p>Ja sam dan iz grafa: {{ weekday }}</p>
     <p>Ja sam  datum iz grafa: {{ date }}</p>
     <chart :chart-data="datacollection"></chart>
@@ -127,12 +127,12 @@ export default {
 <style scoped>
 .container {
   height: 500px;
-  width: 700px;
+  width: 4000px;
 }
 @media screen and (max-width: 750px) {
   .cointainer {
     width: 80%;
-    margin-left: 50px;
+    margin-left: 30px;
   }
 }
 </style>

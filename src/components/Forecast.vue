@@ -35,7 +35,7 @@
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].wind" height="42" width="42" /></p>
         </div> 
 
-        <div class="col tri ">
+    <!--    <div class="col tri ">
           <h3>{{city.curr_day.forecast[2].hour}}</h3>
           <p>{{city.curr_day.forecast[2].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[2].weather" /></p>
@@ -49,7 +49,7 @@
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[3].wind" height="42" width="42" /></p>
         </div> 
 
-     <!--   <div class="col tri ">
+       <div class="col tri ">
           <h3>{{city.curr_day.forecast[4].hour}}</h3>
           <p>{{city.curr_day.forecast[4].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[4].weather" /></p>
@@ -119,7 +119,7 @@ export default {
     return {
      cities: [],
      city: [],
-     selected: 'Rijeka',
+     selected: '',
      curr_selected:'',
      cityData: [],
      cityTemp: [],
@@ -131,9 +131,6 @@ export default {
   methods: {
     
     },
-     getImgUrl(png) {
-    return require('../assets/'+png)
-  },
     created(){
     bus.$on('podaciZaGraf', (data)=> {this.selected = data;
     })
