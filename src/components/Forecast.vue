@@ -49,7 +49,7 @@
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[3].wind" height="42" width="42" /></p>
         </div> 
 
-        <div class="col tri ">
+     <!--   <div class="col tri ">
           <h3>{{city.curr_day.forecast[4].hour}}</h3>
           <p>{{city.curr_day.forecast[4].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[4].weather" /></p>
@@ -63,7 +63,7 @@
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[5].wind" height="42" width="42" /></p>
         </div>
 
-        <div class="col tri ">
+         <div class="col tri ">
           <h3>{{city.curr_day.forecast[6].hour}}</h3>
           <p>{{city.curr_day.forecast[6].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[6].weather" /></p>
@@ -75,7 +75,7 @@
           <p>{{city.curr_day.forecast[7].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[7].weather" /></p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[7].wind" height="42" width="42" /></p>
-        </div> 
+        </div>  -->
 
      </div>
   </div>
@@ -119,7 +119,7 @@ export default {
     return {
      cities: [],
      city: [],
-     selected: '',
+     selected: 'Rijeka',
      curr_selected:'',
      cityData: [],
      cityTemp: [],
@@ -141,11 +141,6 @@ export default {
  mounted () {
     var vrijemeGrada = 'http://localhost:8000/weather/'+this.selected;
     this.curr_selected = this.selected;
-    axios
-      .get('http://localhost:8000/weather/')
-      .then(response => {
-        (this.cities = response.data.cities);
-      });
       axios
       .get(vrijemeGrada)
       .then(response => {(this.city = response.data);
