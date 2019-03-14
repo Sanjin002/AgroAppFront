@@ -1,16 +1,16 @@
 <template>
 <div class="all">
 	<div class="container">
-
+    <div v-for="crops in crops">
     <div class="box">
       <div class="content">
-        <h2>01</h2>
-        <h3>Crop One</h3>
-        <p>lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
+        <h2>{{crops.id}}</h2>
+        <h3>{{crops.name}}</h3>
+        <p>{{crops.description}}</p>
         <a href="#">Read More</a>
       </div>
     </div>
-
+    </div>
     <div class="box">
       <div class="content">
         <h2>02</h2>
@@ -43,13 +43,21 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'crops',
   data () {
     return {
-      
+      crops: '',
     }
-  }
+  },
+   mounted () {
+    axios
+      .get('http://127.0.0.1:8000/crops/crops_api/?format=json')
+      .then(response => {
+        (this.crops = response.data);
+      });
+  },
 }
 </script>
 
@@ -93,10 +101,10 @@ export default {
   transform: skew(2deg, 2deg);
   background: #000;
 }
-.container .boxn:th-child(1):before{
+/*.container .box:nth-child(1):before{
   background: linear-gradient(315deg,#ff0057, #e64a19);
 
-}
+}*/
 .container .box:after{
   content: '';
   position:absolute;
