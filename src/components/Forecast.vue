@@ -1,5 +1,39 @@
 <template>
-  <div>
+<div>
+  <div class="container">
+    <div class="box">
+      <h1>{{selected}}</h1>
+      <h1>4°C</h1>
+      <h3> <img class="slika" src="../assets/16.png"></h3>
+      <h5>Wind: 5 m/s  <br> Humidity: 32% <br> Precipitation: 10%</h5>
+    </div>
+
+    <div class="box">  
+      <p>
+        <!-- <img :src="getImgUrl(hour.weather)" v-bind:alt="hour"> -->
+       <graf class="graf"></graf>
+     </p>
+  <div class="container">
+     <div class="row">
+        <div class="col tri">
+          <h3>Monday</h3>
+          <p>4°C</p>
+          <p><img class="slika" src="../assets/43.png"></p>
+          
+        </div>
+     </div>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  <!--<div>
     <div class="row">
       <h5>{{selected}} </h5>
        <div class="col-10 weather">       
@@ -11,11 +45,8 @@
                <p>bla</p>
           </div>
         </div>
-    </div>
-  </div>
-        <!-- <img :src="getImgUrl(hour.weather)" v-bind:alt="hour"> -->
-     <graf class="graf"></graf>
-  </div>
+    </div>-->
+     
 </template>
 
 <script> 
@@ -76,13 +107,16 @@ export default {
 
 <style scoped>
 
-/*.graf {
-  width: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-}*/
+.container {
+}
+
+.weather {
+  width: 500px;
+  height: 600px;
+  padding: 10px 30px;
+  /*border: 1px solid black;*/
+  justify-content: center;
+}
 
 #forecast {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -92,11 +126,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.container .table {
-      
-    width: 80%;
-    height: 200px;
-    color: white;
-    padding: 25px;
-  }
+
 </style>

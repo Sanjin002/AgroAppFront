@@ -11,32 +11,6 @@
       </div>
     </div>
     </div>
-    <div class="box">
-      <div class="content">
-        <h2>02</h2>
-        <h3>Crop Two</h3>
-        <p>lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-
-    <div class="box">
-      <div class="content">
-        <h2>03</h2>
-        <h3>Crop Three</h3>
-        <p>lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-
-    <div class="box">
-      <div class="content">
-        <h2>04</h2>
-        <h3>Crop Four</h3>
-        <p>lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
 
 	</div>
 </div>	
@@ -102,7 +76,7 @@ export default {
   background: #000;
 }
 
-.container .box:nth-child(1):before{
+.container .boxn:th-child(1):before{
   background: linear-gradient(315deg,#ff0057, #e64a19);
 
 }
@@ -134,7 +108,7 @@ export default {
   transition: 0.5s;
 }
 .box:hover .content h2 {
-   top: -140px;
+   top: -100px;
 }
 .box .content h3 {
   margin: 0 0 10px;
