@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <b-navbar toggleable="lg" type="dark" variant="success">
-      <b-navbar-brand href="#">Agro App</b-navbar-brand>
+  <div >
+    <b-navbar class="crta" toggleable="lg" type="dark" >
+      <!--<b-navbar-brand href="#">AGRO APP</b-navbar-brand>-->
       <b-navbar-toggle target="nav_collapse" />
       <b-collapse is-nav id="nav_collapse">
-        <b-navbar-nav>
-          <b-nav-item to="/">Hello</b-nav-item>
-          <b-nav-item to="/Forecast">Forecast</b-nav-item>
-          <b-nav-item to="/Crops">Crops</b-nav-item>
+        <b-navbar-nav class="lista">
+          <b-nav-item  class="link" to="/">HELLO</b-nav-item>
+          <b-nav-item class="link" to="/Forecast">FORECAST</b-nav-item>
+          <b-nav-item  class="link" to="/Crops">CROPS</b-nav-item>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
@@ -54,4 +54,34 @@ export default {
 
 <style scoped>
 
+.lista {
+  font-size: 25px;
+  color: white;
+  font-family: sans-serif;
+   
+}
+.lista .active .link {
+  border: 1px solid white;
+}
+.lista .link:hover {
+  
+  border: 1px solid white;
+  border-radius: 0px
+  /*font-weight: bold;*/
+   
+}
+.lista .link {
+  padding: 3px 20px;
+}
+.crta {
+  border-bottom:1px solid white;
+  padding-bottom:5px;
+  
+}
+.span {
+  color: white;
+}
+span {
+  color: white;
+}
 </style>

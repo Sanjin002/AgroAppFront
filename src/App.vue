@@ -77,12 +77,18 @@ body {
   color: white;
 }
 body {
- background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url("./assets/background.png");
+ /*background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url("./assets/background.png");*/
+ background-color: black;
  height: 100vh;
  background-size: cover;
  background-position: center;
  background-repeat: no-repeat;
-  background-attachment: fixed;
+ background-attachment: fixed;
+
+ margin: 0;
+ padding: 0;
+
+
 }
 
 main {
