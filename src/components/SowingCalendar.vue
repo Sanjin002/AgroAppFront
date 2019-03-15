@@ -3,7 +3,7 @@
       <div id="app">
         <h1>My Calendar</h1>
         <h1>primio sam podatak o gradu: {{selected}}</h1>
-        <calendar-view
+        <calendar-view  
           :show-date="showDate"
           class="theme-default holiday-us-traditional holiday-us-official">
           <calendar-view-header
@@ -45,5 +45,5 @@
 </script>
 
 <style scoped>
-
+ 
 </style>
