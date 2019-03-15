@@ -11,7 +11,7 @@
       <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].wind" height="100" width="100" /></p> 
 </h3>
 
-      <h5>Wind: 5 m/s  <br> Humidity: 32% <br> Precipitation: 10%</h5>
+      <h5>Wind: {{city.curr_day.forecast[1].wspd}}m/s  <br> Humidity: {{city.curr_day.forecast[1].humidity}}% <br> Precipitation: {{city.curr_day.forecast[1].precpct}}</h5>
     </div>
 
     <div class="box">  
@@ -28,7 +28,7 @@
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[0].wind" height="42" width="42" /></p>
         </div> 
 
-        <div class="col tri ">
+        <!--<div class="col tri ">
           <h3>{{city.curr_day.forecast[1].hour}}</h3>
           <p>{{city.curr_day.forecast[1].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].weather" /></p>
@@ -75,7 +75,11 @@
           <p>{{city.curr_day.forecast[7].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[7].weather" /></p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[7].wind" height="42" width="42" /></p>
-        </div>  -->
+
+        </div>-->
+
+        </div>  
+
 
      </div>
   </div>
