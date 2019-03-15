@@ -1,6 +1,7 @@
 <template>
   <div>
   <div class="container">
+    <h5>Prikaz padalina i temperature za {{selected}} od {{date}} do {{date2}}</h5>
 
     <chart :chart-data="datacollection"></chart>
   </div>
@@ -24,6 +25,7 @@ export default {
       temp:'',
       perc:'',
       date:'',
+      date2:'',
       weekday:'',
     };
   },
@@ -36,12 +38,8 @@ export default {
     this.curr_selected = this.selected;
       axios
       .get(vrijemeGrada)
-      .then(response => {(this.temp1 = response.data.day_1.temp_arr);
-                        (this.perc1 = response.data.day_1.perc_arr);
-                        (this.temp2 = response.data.day_2.temp_arr);
-                        (this.perc2 = response.data.day_2.perc_arr);
-                        (this.temp3 = response.data.day_3.temp_arr);
-                        (this.perc3 = response.data.day_3.perc_arr);
+      .then(response => {(this.temp = response.data.day_4.temp_arr);
+                        (this.perc = response.data.day_4.perctp_arr);
         this.fillData();
       });
   },
@@ -51,20 +49,11 @@ export default {
     var vrijemeGradaUD = 'http://localhost:8000/weather/'+this.selected;
     axios
       .get(vrijemeGradaUD)
-      .then(response => {(this.temp1 = response.data.day_1.temp_arr);
-                        (this.perc1 = response.data.day_1.perc_arr);
-                        (this.date = response.data.day_1.date);
+      .then(response => {(this.date = response.data.day_1.date);
+                        (this.date2 = response.data.day_4.date);
                         (this.weekday = response.data.day_1.weekday);
-<<<<<<< HEAD
                         (this.temp = response.data.day_4.temp_arr);
                         (this.perc = response.data.day_4.perctp_arr);
-                        
-=======
-                        (this.temp2 = response.data.day_2.temp_arr);
-                        (this.perc2 = response.data.day_2.perc_arr);
-                        (this.temp3 = response.data.day_3.temp_arr);
-                        (this.perc3 = response.data.day_3.perc_arr);
->>>>>>> parent of 032d43f... Zadnji put da sve dobro radi
         this.fillData();
       });
     }
@@ -78,7 +67,7 @@ export default {
           {
             label: "Temperatura",
             borderColor: "#f87979",
-            data: this.getTemp3()
+            data: this.getTemp()
           },
           {
             label: "Oborine",
@@ -106,18 +95,11 @@ export default {
     getRandomInt() {
       return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
     },
-    getTemp1(){
-      return   this.temp1
+    getTemp(){
+      return   this.temp
     },
-    getTemp2(){
-      return   this.temp2
-    },
-     getTemp3(){
-      return   this.temp3
-    },
-    
     getPerc(){
-      return   this.perc1
+      return   this.perc
     }
   },
 };
@@ -126,7 +108,7 @@ export default {
 <style scoped>
 .container {
   height: 500px;
-  width: 4000px;
+  width: 1500px;
 }
 @media screen and (max-width: 750px) {
   .cointainer {

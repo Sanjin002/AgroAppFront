@@ -20,14 +20,7 @@
     </div>
 
     <div class="box">  
-<<<<<<< HEAD
-    
-=======
-      <p>
-        <!-- <img :src="getImgUrl(hour.weather)" v-bind:alt="hour"> -->
-       
-     </p>
->>>>>>> parent of 032d43f... Zadnji put da sve dobro radi
+
   <div class="box weather">
      <div class="row">
         <div class="col tri ">
@@ -38,12 +31,8 @@
         </div>
 
 
-        <div class="col tri ">
 
-<<<<<<< HEAD
-=======
-        <!--<div class="col tri ">
->>>>>>> parent of 032d43f... Zadnji put da sve dobro radi
+        <div class="col tri ">
           <h3>{{city.curr_day.forecast[1].hour}}</h3>
           <p>{{city.curr_day.forecast[1].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].weather" /></p>
@@ -51,12 +40,9 @@
         </div>
 
 
-       <div class="col tri ">
 
-<<<<<<< HEAD
-=======
-    <!--    <div class="col tri ">
->>>>>>> parent of 032d43f... Zadnji put da sve dobro radi
+       
+        <div class="col tri ">
           <h3>{{city.curr_day.forecast[2].hour}}</h3>
           <p>{{city.curr_day.forecast[2].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[2].weather" /></p>
@@ -90,23 +76,7 @@
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[6].weather" /></p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[6].wind" height="42" width="42" /></p>
         </div>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 032d43f... Zadnji put da sve dobro radi
-        <div class="col tri ">
-          <h3>{{city.curr_day.forecast[7].hour}}</h3>
-          <p>{{city.curr_day.forecast[7].temperature}}°C</p>
-          <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[7].weather" /></p>
-          <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[7].wind" height="42" width="42" /></p>
-
-        </div>-->
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 032d43f... Zadnji put da sve dobro radi
-
+        </div>
         </div>  
 
 
