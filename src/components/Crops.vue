@@ -1,6 +1,5 @@
 <template>
   <div>
-    <components v-bind:is="component"></components>
     <div class="all">
 	<div class="container">
     <div v-for="crops in crops">
@@ -8,12 +7,11 @@
       <div class="content">
         <h2>{{crops.id}}</h2>
         <h3>{{crops.name}}</h3>
-        <p>{{crops.description}}</p>
-        <button class="btn btn-dark" type="submit" v-on:click="submit(crops.id)" >Read more</button>
-
-        <button @click="showModal = true">Click</button>
+        <p>{{crops.category}}</p>
+        <button type="submit" v-on:click="submit(crops.id)" >Read more</button>
     </div>
     </div>
+  <aboutcrops v-bind:submit="submit"></aboutcrops>
 	</div>
   </div>
 </div>
@@ -29,13 +27,13 @@ import Aboutcrops from './Aboutcrops.vue';
 export default {
 	name: 'crops',
 	components: {
-    'listakultura': Listakultura,
     'aboutcrops': Aboutcrops
   },
   data () {
     return {
       crops: '',
       showModal: false,
+      selected:'',
     }
   },
    mounted () {
@@ -46,16 +44,10 @@ export default {
       });
   },
   methods: {
-    submit: function(cropId){
-      this.$emit('selectedCrop',cropId);
-      // bus.$emit('podaciZaGraf', this.selected);
+    submit: function(){
+      this.$emit('noviSelected',this.selected);
+      bus.$emit('podaciZaKulture', this.selected);
     },
-    open: function() {
-      this.show = true;
-    },
-    close: function() {
-      this.show = false;
-    }
   },
 }
 
