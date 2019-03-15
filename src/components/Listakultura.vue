@@ -7,7 +7,7 @@
         <h2>{{crops.id}}</h2>
         <h3>{{crops.name}}</h3>
         <p>{{crops.description}}</p>
-        <button class="btn btn-dark" type="submit" v-model="kultura" v-on:click="submit(crops.id)" >Read more</button>
+        <button class="btn btn-dark" type="submit" v-on:click="submit(crops.id)" >Read more</button>
 
         <button @click="showModal = true">Click</button>
     </div>
@@ -39,7 +39,6 @@ export default {
     return {
       crops: '',
       showModal: false,
-      kultura:'',
     }
   },
    mounted () {

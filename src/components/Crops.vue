@@ -1,6 +1,6 @@
 <template>
   <div>
-  	<h5>ovo je id{{kultura}}</h5>
+    <components v-bind:is="component"></components>
     <div class="all">
 	<div class="container">
     <div v-for="crops in crops">
@@ -9,7 +9,9 @@
         <h2>{{crops.id}}</h2>
         <h3>{{crops.name}}</h3>
         <p>{{crops.description}}</p>
-        <button type="submit" v-model="kultura" v-on:click="submit(crops.id)" >Read more</button>
+        <button class="btn btn-dark" type="submit" v-on:click="submit(crops.id)" >Read more</button>
+
+        <button @click="showModal = true">Click</button>
     </div>
     </div>
 	</div>
@@ -21,18 +23,19 @@
 
 <script>
 import axios from 'axios'
+import Listakultura from './Listakultura.vue';
 import Aboutcrops from './Aboutcrops.vue';
 
 export default {
 	name: 'crops',
 	components: {
+    'listakultura': Listakultura,
     'aboutcrops': Aboutcrops
   },
   data () {
     return {
       crops: '',
       showModal: false,
-      kultura:'',
     }
   },
    mounted () {
@@ -43,8 +46,8 @@ export default {
       });
   },
   methods: {
-    submit: function(){
-      this.$emit('noviSelected',this.kultura);
+    submit: function(cropId){
+      this.$emit('selectedCrop',cropId);
       // bus.$emit('podaciZaGraf', this.selected);
     },
     open: function() {

@@ -16,7 +16,7 @@
         <b-navbar-nav class="ml-auto">
           <b-nav-form>
             <b-form-input list="gradovi" size="sm" class="mr-sm-2" type="text" placeholder="Search the city" v-model="selected" v-on:keyup.enter="submit"/>
-            <button class="btn btn-dark" type="submit" v-on:click="submit" >Click rapidly</button>
+            <button class="btn btn-dark" type="submit" v-on:click="submit" >{{ selected }}</button>
               <datalist id="gradovi">
                 <option v-for="city in cities">{{city.name}}</option>
               </datalist>
