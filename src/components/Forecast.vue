@@ -22,7 +22,7 @@
   <div class="box weather">
      <div class="row">
         <div class="col tri ">
-          <h3>{{city.curr_day.forecast[0].hour}}</h3>
+          <h3> {{city.curr_day.forecast[0].hour}}</h3>
           <p>{{city.curr_day.forecast[0].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[0].weather" /></p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[0].wind" height="42" width="42" /></p>
