@@ -35,7 +35,7 @@
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].wind" height="42" width="42" /></p>
         </div> 
 
-    <!--    <div class="col tri ">
+        <div class="col tri ">
           <h3>{{city.curr_day.forecast[2].hour}}</h3>
           <p>{{city.curr_day.forecast[2].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[2].weather" /></p>
