@@ -1,12 +1,10 @@
 <template>
   <div>
   <div class="container">
-    <p>Ja sam grad iz grafa: {{ selected }}</p>
-    <p>Ja sam dan iz grafa: {{ weekday }}</p>
-    <p>Ja sam  datum iz grafa: {{ date }}</p>
+
     <chart :chart-data="datacollection"></chart>
   </div>
-  
+
   </div>
 </template>
 <script>
@@ -47,7 +45,7 @@ export default {
       .then(response => {(this.temp = response.data.day_4.temp_arr);
                         (this.perc = response.data.day_4.perctp_arr);
         this.fillData();
-      });              
+      });
   },
   updated() {
     if(this.selected !== this.curr_selected){
@@ -60,7 +58,7 @@ export default {
                         (this.temp = response.data.day_4.temp_arr);
                         (this.perc = response.data.day_4.perctp_arr);
         this.fillData();
-      });              
+      });
     }
   },
   methods: {
