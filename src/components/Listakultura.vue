@@ -8,12 +8,11 @@
         <h3>{{crops.name}}</h3>
         <p>{{crops.description}}</p>
         <button class="btn btn-dark" type="submit" v-on:click="submit(crops.id)" >Read more</button>
-
         <button @click="showModal = true">Click</button>
     </div>
     </div>
 	</div>
-    
+
 
 
 

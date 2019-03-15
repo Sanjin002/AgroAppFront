@@ -1,23 +1,27 @@
 <template>
 <div class="container" >
   <div >
+    <div v-if="loading">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <div v-else>
     <div class="box">
-      
       <h1>{{weekday}} {{date}}</h1>
       <h1>{{selected}}</h1>
-      <h1>{{city.curr_day.forecast[1].hour}}</h1>
-      <h1>{{city.curr_day.forecast[1].temperature}}°C</h1>
+      <h1>{{city.curr_day.forecast[0].hour}}</h1>
+      <h1>{{city.curr_day.forecast[0].temperature}}°C</h1>
       <h3> <img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].weather" height="150" width="150" />
-      <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].wind" height="100" width="100" /></p> 
+      <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].wind" height="100" width="100" /></p>
 </h3>
 
-      <h5>Wind: {{city.curr_day.forecast[1].wspd}}m/s  <br> Humidity: {{city.curr_day.forecast[1].humidity}}% <br> Precipitation: {{city.curr_day.forecast[1].precpct}}</h5>
+      <h5>Wind: {{city.curr_day.forecast[0].wspd}}m/s  <br> Humidity: {{city.curr_day.forecast[1].humidity}}% <br> Precipitation: {{city.curr_day.forecast[1].precpct}}</h5>
     </div>
-
-    <div class="box">  
+    <div class="box">
       <p>
         <!-- <img :src="getImgUrl(hour.weather)" v-bind:alt="hour"> -->
-       
+
      </p>
   <div class="box weather">
      <div class="row">
@@ -26,28 +30,28 @@
           <p>{{city.curr_day.forecast[0].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[0].weather" /></p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[0].wind" height="42" width="42" /></p>
-        </div> 
+        </div>
 
-        <!--<div class="col tri ">
+        <div class="col tri ">
           <h3>{{city.curr_day.forecast[1].hour}}</h3>
           <p>{{city.curr_day.forecast[1].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].weather" /></p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].wind" height="42" width="42" /></p>
-        </div> 
+        </div>
 
-    <!--    <div class="col tri ">
+       <div class="col tri ">
           <h3>{{city.curr_day.forecast[2].hour}}</h3>
           <p>{{city.curr_day.forecast[2].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[2].weather" /></p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[2].wind" height="42" width="42" /></p>
-        </div> 
+        </div>
 
         <div class="col tri ">
           <h3>{{city.curr_day.forecast[3].hour}}</h3>
           <p>{{city.curr_day.forecast[3].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[3].weather" /></p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[3].wind" height="42" width="42" /></p>
-        </div> 
+        </div>
 
        <div class="col tri ">
           <h3>{{city.curr_day.forecast[4].hour}}</h3>
@@ -76,9 +80,9 @@
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[7].weather" /></p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[7].wind" height="42" width="42" /></p>
 
-        </div>-->
+        </div>
 
-        </div>  
+        </div>
 
 
      </div>
@@ -87,30 +91,9 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-  <!--<div>
-    <div class="row">
-      <h5>{{selected}} </h5>
-       <div class="col-10 weather">       
-        <div class="row">
-          <div class="tri col">
-            <h4>{{city.curr_day.forecast[0].temperature}}</h4>
-              <p> bla °C</p>
-                <img class="slika" :src="../assets/1.png">
-               <p>bla</p>
-          </div>
-        </div>
-    </div>-->
-     
 </template>
 
-<script> 
+<script>
 import axios from 'axios'
 import { bus } from '../main'
 import Graf from './Graf.vue';
@@ -133,7 +116,7 @@ export default {
     }
   },
   methods: {
-    
+
     },
     created(){
     bus.$on('podaciZaGraf', (data)=> {this.selected = data;
@@ -182,14 +165,14 @@ export default {
   margin-top: 20px;
   /*width: 30%;*/
   height: 300px;
-  
+
 
 }
 .weather {
   width: 90%;
   height: 600px;
   padding: 10px 20px;
-  
+
   justify-content: center;
   display:  inline-flex;
 }
@@ -198,7 +181,7 @@ export default {
   padding: 10px;
   margin: 10px;
 }
- 
+
 
 #forecast {
   font-family: /*'Avenir', Helvetica, Arial, */sans-serif;
