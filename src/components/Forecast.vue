@@ -15,10 +15,7 @@
     </div>
 
     <div class="box">  
-      <p>
-        <!-- <img :src="getImgUrl(hour.weather)" v-bind:alt="hour"> -->
-       
-     </p>
+     
   <div class="box weather">
      <div class="row">
         <div class="col tri ">
@@ -28,14 +25,14 @@
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[0].wind" height="42" width="42" /></p>
         </div> 
 
-        <!--<div class="col tri ">
+       <div class="col tri ">
           <h3>{{city.curr_day.forecast[1].hour}}</h3>
           <p>{{city.curr_day.forecast[1].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].weather" /></p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[1].wind" height="42" width="42" /></p>
         </div> 
 
-    <!--    <div class="col tri ">
+      <div class="col tri ">
           <h3>{{city.curr_day.forecast[2].hour}}</h3>
           <p>{{city.curr_day.forecast[2].temperature}}°C</p>
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[2].weather" /></p>
@@ -70,17 +67,9 @@
           <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[6].wind" height="42" width="42" /></p>
         </div>
 
-        <div class="col tri ">
-          <h3>{{city.curr_day.forecast[7].hour}}</h3>
-          <p>{{city.curr_day.forecast[7].temperature}}°C</p>
-          <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[7].weather" /></p>
-          <p><img class="slika" v-bind:src="'../static/img/' + city.curr_day.forecast[7].wind" height="42" width="42" /></p>
-
-        </div>-->
+        
 
         </div>  
-
-
      </div>
   </div>
   <graf class="graf"></graf>

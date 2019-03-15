@@ -28,9 +28,9 @@
           }
       },
       created(){
-    bus.$on('podaciZaGraf', (data)=> {this.selected = data;
-    })
-  },
+     bus.$on('podaciZaGraf', (data)=> {this.selected = data;
+     })
+   },
       components: {
          CalendarView,
         CalendarViewHeader,
