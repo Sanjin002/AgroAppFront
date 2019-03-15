@@ -1,11 +1,15 @@
 <template>
   <div id="app">
     <header>
+      
       <Navbar v-bind:cities="cities" v-on:noviSelected="noviGrad($event)"></Navbar>
     </header>
     <main>
+      <keep-alive>
       <router-view></router-view>
+      </keep-alive>
     </main>
+
     </div>
   </div>
 </template>

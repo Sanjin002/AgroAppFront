@@ -27,6 +27,12 @@ export default {
       perc:'',
       date:'',
       weekday:'',
+      temp1:'',
+      perc1:'',
+      temp2:'',
+      perc2:'',
+      temp3:'',
+      perc3:'',
     };
   },
   created(){
@@ -38,8 +44,12 @@ export default {
     this.curr_selected = this.selected;
       axios
       .get(vrijemeGrada)
-      .then(response => {(this.temp = response.data.day_1.temp_arr);
-                        (this.perc = response.data.day_1.perc_arr);
+      .then(response => {(this.temp1 = response.data.day_1.temp_arr);
+                        (this.perc1 = response.data.day_1.perc_arr);
+                        (this.temp2 = response.data.day_2.temp_arr);
+                        (this.perc2 = response.data.day_2.perc_arr);
+                        (this.temp3 = response.data.day_3.temp_arr);
+                        (this.perc3 = response.data.day_3.perc_arr);
         this.fillData();
       });              
   },
@@ -49,10 +59,14 @@ export default {
     var vrijemeGradaUD = 'http://localhost:8000/weather/'+this.selected;
     axios
       .get(vrijemeGradaUD)
-      .then(response => {(this.temp = response.data.day_1.temp_arr);
-                        (this.perc = response.data.day_1.perc_arr);
+      .then(response => {(this.temp1 = response.data.day_1.temp_arr);
+                        (this.perc1 = response.data.day_1.perc_arr);
                         (this.date = response.data.day_1.date);
                         (this.weekday = response.data.day_1.weekday);
+                        (this.temp2 = response.data.day_2.temp_arr);
+                        (this.perc2 = response.data.day_2.perc_arr);
+                        (this.temp3 = response.data.day_3.temp_arr);
+                        (this.perc3 = response.data.day_3.perc_arr);
         this.fillData();
       });              
     }
@@ -60,17 +74,17 @@ export default {
   methods: {
     fillData() {
       this.datacollection = {
-        labels: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
+        labels: ['00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00'],
         // labels: [this.getRandomInt(), this.getRandomInt()],
         datasets: [
           {
             label: "Temperatura",
             borderColor: "#f87979",
-            data: this.getTemp()
+            data: this.getTemp3()
           },
           {
             label: "Oborine",
-            borderColor: "#A5CC82",
+            backgroundColor: "#A5CC82",
             data: this.getPerc()
           }
           // {
@@ -94,11 +108,17 @@ export default {
     getRandomInt() {
       return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
     },
-    getTemp(){
-      return   this.temp
+    getTemp1(){
+      return   this.temp1
+    },
+    getTemp2(){
+      return   this.temp2
+    },
+     getTemp3(){
+      return   this.temp3
     },
     getPerc(){
-      return   this.perc
+      return   this.perc1
     }
   },
 };
@@ -107,12 +127,12 @@ export default {
 <style scoped>
 .container {
   height: 500px;
-  width: 700px;
+  width: 4000px;
 }
 @media screen and (max-width: 750px) {
   .cointainer {
     width: 80%;
-    margin-left: 50px;
+    margin-left: 30px;
   }
 }
 </style>
